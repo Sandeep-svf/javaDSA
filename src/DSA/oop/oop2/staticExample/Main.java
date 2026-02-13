@@ -3,7 +3,6 @@ package DSA.oop.oop2.staticExample;
 public class Main {
 
 
-
     public static void main(String[] args) {
         // if class are the same folder you do not have to import.
         Human sam = new Human(12,"sandeep maurya","Good",false);
@@ -33,7 +32,7 @@ public class Main {
 
         /// Static variable-when a member declare as static it can be accessed before any of the object of the class
         ///  is being created and without referencing to that object.
-// note - static variable are not dependent on the object.
+        // note - static variable are not dependent on the object.
 
         /// you can declare both methods and variable as statics.
         // e.g. public static void main(String args[]) .
@@ -57,15 +56,23 @@ public class Main {
         // so without specifying which instance mood() belongs to i can not use here.
 
 
-        // mood(); can not use because required instance.
+        // mood(); can not use because required instance(objects).
         // but the function you are using it in does not depend on instance.
+
+        // so use this inside static methods we need to create an object and form that object reference variable can use it.
+
+        ///  basically , you can not access non-static stuff without referencing their instance in a static context.
+        /// hence, here I am referencing it...
+        Main mainObj = new Main();
+        mainObj.mood(); /// now we are able to access it.
+
     }
 
 
     /// But we can access static member/methods inside non-static member/methods
     static void going(){
         System.out.println("i am going to have:");
-        fun(); // calling static methods here...
+        fun(); // calling static methods here...\
 
     }
 
